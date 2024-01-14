@@ -2,15 +2,17 @@
 	"praysTimes": {
 		"Fajr": "05:20",
 		"Sunrise": "06:52",
-		"Dhuhr": "12:03",
-		"Asr": "14:55",
-		"Sunset": "17:15",
-		"Maghrib": "17:15",
+		"Dhuhr": "12:04",
+		"Asr": "14:56",
+		"Sunset": "17:16",
+		"Maghrib": "17:16",
 		"Isha": "18:37",
 		"Imsak": "05:10",
-		"Midnight": "00:03",
-		"Firstthird": "21:47",
-		"Lastthird": "02:19"
+		"Midnight": "00:04",
+		"Firstthird": "21:48",
+		"Lastthird": "02:20",
+		"sleep": "21:30",
+		"readingBook": "08:30"
 	},
-	"fileDate": "2024-01-12T22:00:00.000Z"
+	"fileDate": "2024-01-13T22:00:00.000Z"
 }

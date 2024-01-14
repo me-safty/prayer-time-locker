@@ -1,12 +1,15 @@
 #!/usr/bin/env node
 
 const fs = require("fs").promises
+const path = require("path")
+
+console.log(new Date())
 
 const timeApiUrl =
 	"https://api.aladhan.com/v1/timingsByCity?city=Cairo&country=Egypt"
 
-const dataFilePath =
-	"/home/safty/Desktop/prayer_block/prayer-time-locker/times.json"
+const relativeFilePath = "./times.json"
+const dataFilePath = path.join(__dirname, relativeFilePath)
 
 async function fetchTime() {
 	try {
@@ -56,6 +59,11 @@ function shouldSleep(currentTime, sleepTimes) {
 	})
 }
 
+const manualTimes = {
+	sleep: "21:30",
+	readingBook: "08:30",
+}
+
 async function main() {
 	const savedData = await loadData()
 
@@ -72,7 +80,7 @@ async function main() {
 	} else {
 		const todayData = (await fetchTime()).data
 		praysData = {
-			praysTimes: todayData.timings,
+			praysTimes: { ...todayData.timings, ...manualTimes },
 			fileDate: new Date(todayData.date.readable),
 		}
 		await saveData(praysData)
