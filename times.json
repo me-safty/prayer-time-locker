@@ -1,18 +1,1 @@
-{
-	"praysTimes": {
-		"Fajr": "05:20",
-		"Sunrise": "06:52",
-		"Dhuhr": "12:04",
-		"Asr": "14:56",
-		"Sunset": "17:16",
-		"Maghrib": "17:16",
-		"Isha": "18:37",
-		"Imsak": "05:10",
-		"Midnight": "00:04",
-		"Firstthird": "21:48",
-		"Lastthird": "02:20",
-		"sleep": "21:30",
-		"readingBook": "08:30"
-	},
-	"fileDate": "2024-01-13T22:00:00.000Z"
-}
+{"praysTimes":{"Fajr":"04:53","Sunrise":"06:19","Dhuhr":"12:07","Asr":"15:25","Sunset":"17:55","Maghrib":"17:55","Isha":"19:12","Imsak":"04:43","Midnight":"00:07","Firstthird":"22:03","Lastthird":"02:11","sleep":"21:35","sleep1":"21:40","sleep2":"21:45","sleep3":"21:50","sleep4":"21:55","sleep5":"22:00","readingBook":"08:20"},"fileDate":"2024-03-01T22:00:00.000Z"}

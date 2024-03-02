@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+//usr/bin/env node
 
 const fs = require("fs").promises
 const path = require("path")
@@ -52,7 +52,7 @@ const getPrayTime = (pray) => {
 function shouldSleep(currentTime, sleepTimes) {
 	return sleepTimes.some((pray) => {
 		const prayDate = getPrayTime(pray)
-		const tenMinBefore = new Date(prayDate).getTime() - 60 * 1000 * 5
+		const tenMinBefore = new Date(prayDate).getTime() - 60 * 1000 * 7
 		const prayTime = new Date(prayDate).getTime()
 
 		return currentTime <= prayTime && currentTime >= tenMinBefore
@@ -60,8 +60,13 @@ function shouldSleep(currentTime, sleepTimes) {
 }
 
 const manualTimes = {
-	sleep: "21:30",
-	readingBook: "08:30",
+	sleep: "21:35",
+	sleep1: "21:40",
+	sleep2: "21:45",
+	sleep3: "21:50",
+	sleep4: "21:55",
+	sleep5: "22:00",
+	readingBook: "08:20",
 }
 
 async function main() {
@@ -89,7 +94,7 @@ async function main() {
 	if (shouldSleep(currentDate, Object.values(praysData.praysTimes))) {
 		console.log("It's sleep time. Putting the system to sleep...")
 		// Uncomment the following line to trigger sleep (requires sudo privileges)
-		require("child_process").execSync("sudo systemctl suspend")
+	require("child_process").execSync("sudo systemctl suspend")
 		// If you want your script to lock the screen
 		// require("child_process").execSync("gnome-screensaver-command -l")
 	} else {
@@ -98,3 +103,4 @@ async function main() {
 }
 
 main()
+
