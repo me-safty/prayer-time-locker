@@ -94,7 +94,7 @@ async function main() {
 	if (shouldSleep(currentDate, Object.values(praysData.praysTimes))) {
 		console.log("It's sleep time. Putting the system to sleep...")
 		// Uncomment the following line to trigger sleep (requires sudo privileges)
-	require("child_process").execSync("sudo systemctl suspend")
+		require("child_process").execSync("sudo systemctl suspend")
 		// If you want your script to lock the screen
 		// require("child_process").execSync("gnome-screensaver-command -l")
 	} else {
