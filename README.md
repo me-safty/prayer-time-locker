@@ -23,5 +23,7 @@ Add the line:
 replace
 
 `/usr/bin/node` => with your node path
+
 `/home/user/cron-job.js` => with your script path
+
 `/home/user/cron-job.log` => with your log file path
