@@ -52,21 +52,24 @@ const getPrayTime = (pray) => {
 function shouldSleep(currentTime, sleepTimes) {
 	return sleepTimes.some((pray) => {
 		const prayDate = getPrayTime(pray)
-		const tenMinBefore = new Date(prayDate).getTime() - 60 * 1000 * 7
 		const prayTime = new Date(prayDate).getTime()
+		const getMins = (mins) => 60 * 1000 * mins
+		const timeAfterPray = prayTime + getMins(15)
+		const allawedTime = timeAfterPray + getMins(10)
 
-		return currentTime <= prayTime && currentTime >= tenMinBefore
+		return currentTime <= allawedTime && currentTime >= timeAfterPray
 	})
 }
 
+// to add custom times
 const manualTimes = {
-	sleep: "21:35",
-	sleep1: "21:40",
-	sleep2: "21:45",
-	sleep3: "21:50",
-	sleep4: "21:55",
-	sleep5: "22:00",
-	readingBook: "08:20",
+	// sleep: "21:35",
+	// sleep1: "21:40",
+	// sleep2: "21:45",
+	// sleep3: "21:50",
+	// sleep4: "21:55",
+	// sleep5: "22:00",
+	// readingBook: "08:20",
 }
 
 async function main() {
@@ -94,13 +97,12 @@ async function main() {
 	if (shouldSleep(currentDate, Object.values(praysData.praysTimes))) {
 		console.log("It's sleep time. Putting the system to sleep...")
 		// Uncomment the following line to trigger sleep (requires sudo privileges)
+
 		// for Ubuntu
 		// require("child_process").execSync("sudo systemctl suspend")
 
 		// for Macos
 		require("child_process").execSync("pmset sleepnow")
-		// If you want your script to lock the screen
-		// require("child_process").execSync("gnome-screensaver-command -l")
 	} else {
 		console.log("It's not time to sleep yet.")
 	}
